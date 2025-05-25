@@ -1,0 +1,402 @@
+/* Responsive styles for all pages */
+
+/* Base responsive adjustments */
+@media (max-width: 1200px) {
+  .container {
+    max-width: var(--container-lg);
+    padding: 0 var(--spacing-lg);
+  }
+  
+  h1 {
+    font-size: calc(var(--h1-size) * 0.9);
+  }
+  
+  h2 {
+    font-size: calc(var(--h2-size) * 0.9);
+  }
+  
+  .section-title {
+    font-size: calc(var(--h2-size) * 0.9);
+  }
+
+  /* Blog page improvements */
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: var(--container-md);
+    padding: 0 var(--spacing-md);
+  }
+  
+  /* Header adjustments */
+  .nav-menu {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .nav-cta {
+    display: none;
+  }
+  
+  /* Grid adjustments */
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  /* Home page */
+  .hero-content {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .hero-3d-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* About page */
+  .about-intro-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .founder-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Courses page */
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .course-detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .course-price {
+    margin-top: 1rem;
+  }
+  
+  .course-instructor {
+    flex-direction: column;
+  }
+  
+  /* Student Portal */
+  .dashboard-main {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-sidebar {
+    margin-top: 2rem;
+  }
+  
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .course-list {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Blog page */
+  .featured-post-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Team page */
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Contact page */
+  .contact-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-form-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-form-3d {
+    display: none;
+  }
+
+  /* Newsletter improvements */
+  .newsletter-form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .newsletter-input {
+    width: 100%;
+  }
+
+  /* WhatsApp button improvements */
+  .whatsapp-button {
+    left: 10px;
+    bottom: 10px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: var(--container-sm);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  h1 {
+    font-size: calc(var(--h1-size) * 0.8);
+  }
+  
+  h2 {
+    font-size: calc(var(--h2-size) * 0.8);
+  }
+  
+  .section-title {
+    font-size: calc(var(--h2-size) * 0.8);
+  }
+  
+  /* Grid adjustments */
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Courses page */
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-tabs {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .filter-tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  /* Blog improvements */
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-image {
+    height: 200px;
+  }
+
+  /* Team improvements */
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* Contact improvements */
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  /* Footer improvements */
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 var(--spacing-xs);
+  }
+
+  h1 {
+    font-size: calc(var(--h1-size) * 0.7);
+  }
+
+  h2 {
+    font-size: calc(var(--h2-size) * 0.7);
+  }
+
+  .section-title {
+    font-size: calc(var(--h2-size) * 0.7);
+  }
+
+  /* Header improvements */
+  .logo-text {
+    font-size: 1.25rem;
+  }
+
+  /* Button improvements */
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  /* Form improvements */
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Newsletter improvements */
+  .newsletter-form {
+    padding: 1rem;
+  }
+
+  .newsletter-input {
+    font-size: 0.875rem;
+  }
+
+  /* WhatsApp button improvements */
+  .whatsapp-button {
+    left: 5px;
+    bottom: 5px;
+    padding: 6px 12px;
+    font-size: 0.875rem;
+  }
+
+  .whatsapp-button i {
+    font-size: 1.25rem;
+  }
+
+  /* Mobile menu improvements */
+  .mobile-menu {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .mobile-menu a {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Additional improvements for very small screens */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  h1 {
+    font-size: calc(var(--h1-size) * 0.6);
+  }
+
+  h2 {
+    font-size: calc(var(--h2-size) * 0.6);
+  }
+
+  .section-title {
+    font-size: calc(var(--h2-size) * 0.6);
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .whatsapp-button {
+    display: none;
+  }
+
+  .whatsapp-button i {
+    display: block;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+
+  .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+}

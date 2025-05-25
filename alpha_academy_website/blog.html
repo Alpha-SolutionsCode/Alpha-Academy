@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Alpha Academy | Best Online Learning Platform in Pakistan</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore Alpha Academy's blog for educational insights, study tips, career guidance, and the latest updates in online learning. Pakistan's leading educational platform.">
+    <meta name="keywords" content="Alpha Academy, online education Pakistan, educational blog, study tips, career guidance, online learning, educational resources, student success, academic excellence, Pakistan education, digital learning, educational technology, student portal, online courses, educational insights, learning strategies, academic success, educational platform, student resources, educational blog Pakistan">
+    <meta name="author" content="Alpha Academy">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Blog - Alpha Academy | Best Online Learning Platform in Pakistan">
+    <meta property="og:description" content="Explore educational insights, study tips, and career guidance on Alpha Academy's blog. Pakistan's leading educational platform.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alphaacademy.com.pk/blog">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" as="script">
+    
+    <!-- Defer Non-Critical CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alphaacademy.com.pk/blog">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2F8D46',
+                        secondary: '#1A1A1A',
+                        accent: '#00B4D8',
+                        'accent-light': '#90E0EF',
+                        'accent-cyan': '#48CAE4',
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 15px rgba(47, 141, 70, 0.5)',
+                        'glow-blue': '0 0 20px rgba(0, 180, 216, 0.5)',
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, #2F8D46 0%, #48CAE4 100%)',
+                        'gradient-secondary': 'linear-gradient(135deg, #1A1A1A 0%, #2F8D46 100%)',
+                        'gradient-futuristic': 'linear-gradient(135deg, #00B4D8 0%, #90E0EF 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(47, 141, 70, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover .blog-image {
+            transform: scale(1.05);
+        }
+
+        /* WhatsApp Button Styles */
+        .whatsapp-button {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: 500;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            animation: none;
+        }
+
+        .whatsapp-button i {
+            font-size: 24px;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-button span {
+            display: none;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @media (min-width: 640px) {
+            .whatsapp-button span {
+                display: inline;
+            }
+        }
+
+        .whatsapp-button::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #F4C542 0%, #D4AF37 100%);
+            border-radius: 50px;
+            z-index: -1;
+            opacity: 0.7;
+            animation: borderGlow 2s infinite;
+        }
+
+        /* WhatsApp Button Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes borderGlow {
+            0% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.9;
+                transform: scale(1.02);
+            }
+            100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+        }
+
+        /* Add a ripple effect on click */
+        .whatsapp-button::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10, 10);
+            opacity: 0;
+            transition: transform .5s, opacity 1s;
+        }
+
+        .whatsapp-button:active::after {
+            transform: scale(0, 0);
+            opacity: .3;
+            transition: 0s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes float-delayed {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fade-in-delayed {
+            0% { opacity: 0; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slide-up {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+            animation: float-delayed 6s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        .animate-fade-in {
+            animation: fade-in 1s ease-out;
+        }
+
+        .animate-fade-in-delayed {
+            animation: fade-in-delayed 1.5s ease-out;
+        }
+
+        .animate-slide-up {
+            animation: slide-up 1s ease-out;
+        }
+
+        /* Particle Animation Styles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            display: block;
+            pointer-events: none;
+            width: 6px;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: particle-float 20s infinite linear;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-duration: 15s; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-duration: 25s; animation-delay: 2s; }
+        .particle:nth-child(3) { left: 30%; animation-duration: 20s; animation-delay: 4s; }
+        .particle:nth-child(4) { left: 40%; animation-duration: 18s; animation-delay: 6s; }
+        .particle:nth-child(5) { left: 50%; animation-duration: 22s; animation-delay: 8s; }
+        .particle:nth-child(6) { left: 60%; animation-duration: 17s; animation-delay: 10s; }
+        .particle:nth-child(7) { left: 70%; animation-duration: 23s; animation-delay: 12s; }
+        .particle:nth-child(8) { left: 80%; animation-duration: 19s; animation-delay: 14s; }
+        .particle:nth-child(9) { left: 90%; animation-duration: 21s; animation-delay: 16s; }
+        .particle:nth-child(10) { left: 95%; animation-duration: 24s; animation-delay: 18s; }
+
+        @keyframes particle-float {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Glowing particles */
+        .particle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            animation: particle-glow 2s infinite alternate;
+        }
+
+        @keyframes particle-glow {
+            from {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+            to {
+                transform: translate(-50%, -50%) scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* Enhanced Text Animation Styles */
+        .text-gradient {
+            background: linear-gradient(45deg, #2F8D46, #48CAE4, #90E0EF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient-shift 8s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .typing-text {
+            border-right: 2px solid #fff;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #fff }
+        }
+
+        /* Enhanced Particle Styles */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .scale-in {
+            animation: scale-in 0.5s ease-out;
+        }
+
+        @keyframes scale-in {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Enhanced Hero Section Styles */
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(47, 141, 70, 0.95) 0%, rgba(0, 180, 216, 0.95) 100%);
+        }
+
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            animation: shine 8s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-stat {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-stat::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-stat:hover::after {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/923196446120" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="whatsapp-button"
+       aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 shadow-lg z-30">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="https://i.pinimg.com/736x/99/bb/1f/99bb1f0ecaf97dcbdb82a6ecab11e556.jpg" alt="Alpha Academy Logo" class="h-10 w-10 rounded-xl" loading="lazy" width="40" height="40">
+                    <span class="text-xl font-bold text-primary">Alpha Academy</span>
+                </a>
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About Us</a>
+                    <a href="courses.html" class="text-gray-600 hover:text-primary transition-colors">Courses</a>
+                    <a href="blog.html" class="text-primary font-medium">Blog</a>
+                    <a href="team.html" class="text-gray-600 hover:text-primary transition-colors">Team</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                </nav>
+                <a href="student-portal.html" class="hidden lg:block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">
+                    Student Portal
+                </a>
+                <button class="lg:hidden text-gray-600 hover:text-primary" aria-label="Toggle mobile menu" id="mobileMenuToggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden" id="mobileMenu">
+        <div class="bg-white h-full w-64 p-6 shadow-lg">
+            <div class="flex justify-between items-center mb-8">
+                <span class="text-xl font-bold text-primary">Menu</span>
+                <button class="text-gray-600 hover:text-primary" aria-label="Close mobile menu" id="mobileMenuClose">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About Us</a>
+                <a href="courses.html" class="text-gray-600 hover:text-primary transition-colors">Courses</a>
+                <a href="blog.html" class="text-primary font-medium">Blog</a>
+                <a href="team.html" class="text-gray-600 hover:text-primary transition-colors">Team</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                <a href="student-portal.html" class="bg-gradient-primary text-white px-6 py-2 rounded-full text-center hover:shadow-glow transition-all">
+                    Student Portal
+                </a>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 relative overflow-hidden">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 hero-gradient"></div>
+            <div class="absolute inset-0 hero-pattern"></div>
+            <div class="hero-shine"></div>
+            
+            <!-- Particles.js Container -->
+            <div id="particles-js"></div>
+
+            <!-- Animated Shapes -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-20 left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-float"></div>
+                <div class="absolute bottom-20 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float-delayed"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left Content -->
+                    <div class="text-left hero-content">
+                        <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white animate-fade-in">
+                            Discover Our <span class="text-gradient">Blog</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-white/95 mb-4 animate-fade-in-delayed typing-text">
+                            Stay updated with the latest articles and insights
+                        </p>
+                        <p class="text-lg text-white/90 mb-8 animate-fade-in-delayed">
+                            Explore educational resources, study tips, and success stories
+                        </p>
+                        
+                        <!-- Stats -->
+                        <div class="grid grid-cols-3 gap-6 mb-8">
+                            <div class="hero-stat text-center">
+                                <h3 class="text-3xl font-bold text-white mb-2">500+</h3>
+                                <p class="text-white/80">Articles</p>
+                            </div>
+                            <div class="hero-stat text-center">
+                                <h3 class="text-3xl font-bold text-white mb-2">50k+</h3>
+                                <p class="text-white/80">Readers</p>
+                            </div>
+                            <div class="hero-stat text-center">
+                                <h3 class="text-3xl font-bold text-white mb-2">100+</h3>
+                                <p class="text-white/80">Authors</p>
+                            </div>
+                        </div>
+
+                        <!-- Search Bar -->
+                        <div class="max-w-xl mb-8 animate-slide-up">
+                            <div class="relative">
+                                <input type="text" 
+                                       placeholder="Search articles..." 
+                                       class="w-full px-6 py-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-light">
+                                <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-accent-light/80 text-white p-3 rounded-full hover:bg-accent transition-colors" aria-label="Search articles">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Content -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="hero-card rounded-2xl p-6 transform hover:scale-105 transition-all">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-book-open text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Study Tips</h3>
+                            <p class="text-white/80">Expert advice for academic success</p>
+                        </div>
+                        <div class="hero-card rounded-2xl p-6 transform hover:scale-105 transition-all">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-briefcase text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Career Guide</h3>
+                            <p class="text-white/80">Navigate your professional journey</p>
+                        </div>
+                        <div class="hero-card rounded-2xl p-6 transform hover:scale-105 transition-all">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-laptop-code text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Technology</h3>
+                            <p class="text-white/80">Latest in educational tech</p>
+                        </div>
+                        <div class="hero-card rounded-2xl p-6 transform hover:scale-105 transition-all">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-users text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Community</h3>
+                            <p class="text-white/80">Join our learning network</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+                <div class="w-8 h-12 border-2 border-white/20 rounded-full flex justify-center">
+                    <div class="w-1 h-3 bg-white/40 rounded-full mt-2"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Blog Posts -->
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3" alt="Future of Education" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">The Future of Education</h3>
+                        <p class="text-gray-600 mb-4">Exploring the latest trends and innovations in education.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+                    
+                    <!-- Blog Post 2 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3" alt="Student Success Stories" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Student Success Stories</h3>
+                        <p class="text-gray-600 mb-4">Inspiring stories of students who have achieved their goals.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+                    
+                    <!-- Blog Post 3 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3" alt="Academic Excellence" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Tips for Academic Excellence</h3>
+                        <p class="text-gray-600 mb-4">Practical tips and strategies for achieving academic success.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+
+                    <!-- Blog Post 4 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3" alt="Technology in Education" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">The Role of Technology in Modern Education</h3>
+                        <p class="text-gray-600 mb-4">How digital tools are transforming the learning experience.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+
+                    <!-- Blog Post 5 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3" alt="Study Routine" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Building a Strong Study Routine</h3>
+                        <p class="text-gray-600 mb-4">Effective strategies for creating and maintaining a productive study schedule.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+
+                    <!-- Blog Post 6 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3" alt="Mental Health in Education" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">The Importance of Mental Health in Education</h3>
+                        <p class="text-gray-600 mb-4">Understanding and maintaining mental well-being during academic pursuits.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+
+                    <!-- Blog Post 7 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3" alt="Group Study" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Group Study Techniques That Work</h3>
+                        <p class="text-gray-600 mb-4">Maximizing learning potential through effective group study methods.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+
+                    <!-- Blog Post 8 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3" alt="Career Planning" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Career Planning for Students</h3>
+                        <p class="text-gray-600 mb-4">Guidance on making informed decisions about future career paths.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+
+                    <!-- Blog Post 9 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3" alt="Time Management" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Time Management for Students</h3>
+                        <p class="text-gray-600 mb-4">Essential skills for balancing academics, extracurricular activities, and personal life.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+
+                    <!-- Blog Post 10 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3" alt="Digital Learning" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Digital Learning Revolution</h3>
+                        <p class="text-gray-600 mb-4">How digital tools are transforming education in Pakistan.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+
+                    <!-- Blog Post 11 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3" alt="Student Leadership" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Developing Student Leadership</h3>
+                        <p class="text-gray-600 mb-4">Essential skills and opportunities for student leaders.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+
+                    <!-- Blog Post 12 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3" alt="Research Skills" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Research Skills for Students</h3>
+                        <p class="text-gray-600 mb-4">Mastering the art of academic research and writing.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+
+                    <!-- Blog Post 13 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3" alt="Online Learning" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Online Learning Best Practices</h3>
+                        <p class="text-gray-600 mb-4">Maximizing your learning potential in virtual classrooms.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+
+                    <!-- Blog Post 14 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3" alt="Critical Thinking" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Critical Thinking Skills</h3>
+                        <p class="text-gray-600 mb-4">Developing analytical and problem-solving abilities.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+
+                    <!-- Blog Post 15 -->
+                    <div class="blog-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3" alt="Student Wellness" class="blog-image w-full h-80 object-cover" loading="lazy" width="400" height="320">
+                            <div class="absolute inset-0 bg-gradient-primary opacity-0 hover:opacity-20 transition-opacity"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Student Wellness Guide</h3>
+                        <p class="text-gray-600 mb-4">Balancing academic success with personal well-being.</p>
+                        <a href="#" class="inline-block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center mt-12 space-x-2">
+                    <button class="px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-primary hover:text-white transition-colors">1</button>
+                    <button class="px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-primary hover:text-white transition-colors">2</button>
+                    <button class="px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-primary hover:text-white transition-colors">3</button>
+                    <button class="px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-primary hover:text-white transition-colors">4</button>
+                    <button class="px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-primary hover:text-white transition-colors">5</button>
+                    <button class="px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-primary hover:text-white transition-colors">6</button>
+                    <button class="px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-primary hover:text-white transition-colors">7</button>
+                    <button class="px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-primary hover:text-white transition-colors">8</button>
+                    <button class="px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-primary hover:text-white transition-colors">9</button>
+                    <button class="px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-primary hover:text-white transition-colors">10</button>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+                <p class="text-xl text-gray-600 mb-8">Stay updated with the latest articles and insights from Alpha Academy</p>
+                <form class="flex justify-center">
+                    <input type="email" class="flex-1 max-w-md px-4 py-3 rounded-l-xl bg-white border border-gray-200 focus:outline-none focus:border-primary" placeholder="Your Email Address">
+                    <button type="submit" class="px-6 py-3 bg-gradient-primary text-white rounded-r-xl hover:shadow-glow transition-all" aria-label="Subscribe to newsletter">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Logo and About -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="https://i.pinimg.com/736x/99/bb/1f/99bb1f0ecaf97dcbdb82a6ecab11e556.jpg" alt="Alpha Academy Logo" class="h-10 w-10 rounded-xl" loading="lazy" width="40" height="40">
+                        <span class="text-xl font-bold text-primary">Alpha Academy</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">Pioneering the future of education with cutting-edge technology and innovative learning methods.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1ALKFtiqGf/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-primary"></i>
+                        </a>
+                        <a href="https://zcal.co/prof-imran-qamar" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="Schedule Meeting">
+                            <i class="fas fa-university text-primary"></i>
+                        </a>
+                        <a href="https://www.instagram.com/alpha_academy19?igsh=MWNwYW5oN245cjNlbA==" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="Instagram">
+                            <i class="fab fa-instagram text-primary"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/imran-sandhu-472822322" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in text-primary"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-primary">Quick Links</h3>
+                    <div class="space-y-4">
+                        <a href="index.html" class="block text-gray-600 hover:text-primary transition-colors">Home</a>
+                        <a href="about.html" class="block text-gray-600 hover:text-primary transition-colors">About Us</a>
+                        <a href="courses.html" class="block text-gray-600 hover:text-primary transition-colors">Courses</a>
+                        <a href="blog.html" class="block text-gray-600 hover:text-primary transition-colors">Blog</a>
+                        <a href="team.html" class="block text-gray-600 hover:text-primary transition-colors">Team</a>
+                        <a href="contact.html" class="block text-gray-600 hover:text-primary transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-primary">Contact Us</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary"></i>
+                            <div>
+                                <p class="text-gray-600">Alpha Academy, Main Campus</p>
+                                <p class="text-gray-600">Gujranwala, Pakistan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-phone-alt mt-1 text-primary"></i>
+                            <div>
+                                <p class="text-gray-600">+92 321 644 3914</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-envelope mt-1 text-primary"></i>
+                            <div>
+                                <p class="text-gray-600">alphaacademy793@outlook.com</p>
+                                <p class="text-gray-600">alphaacademy793@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-primary">Newsletter</h3>
+                    <p class="text-gray-600 mb-4">Subscribe to our newsletter for updates on new courses and events.</p>
+                    <form class="flex">
+                        <input type="email" class="flex-1 px-4 py-3 rounded-l-xl bg-white border border-gray-200 focus:outline-none focus:border-primary" placeholder="Your Email Address">
+                        <button type="submit" class="px-6 py-3 bg-gradient-primary text-white rounded-r-xl hover:shadow-glow transition-all" aria-label="Subscribe to newsletter">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="flex flex-col space-y-2">
+                    <p class="text-gray-600">&copy; 2025 Alpha Academy. All Rights Reserved.</p>
+                    <p class="text-gray-600">Made by 🧠 for <a href="https://wa.me/92494206922" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Muhammad Mikran Sandhu</a></p>
+                </div>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script defer>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            function toggleMobileMenu() {
+                mobileMenu.classList.toggle('hidden');
+                document.body.classList.toggle('overflow-hidden');
+            }
+
+            mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+            mobileMenuClose.addEventListener('click', toggleMobileMenu);
+
+            // Close mobile menu when clicking outside
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    toggleMobileMenu();
+                }
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMobileMenu);
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Chatbase Script -->
+    <script>
+        (function(){
+            if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+                window.chatbase=(...arguments)=>{
+                    if(!window.chatbase.q){
+                        window.chatbase.q=[]
+                    }
+                    window.chatbase.q.push(arguments)
+                };
+                window.chatbase=new Proxy(window.chatbase,{
+                    get(target,prop){
+                        if(prop==="q"){
+                            return target.q
+                        }
+                        return(...args)=>target(prop,...args)
+                    }
+                })
+            }
+            const onLoad=function(){
+                const script=document.createElement("script");
+                script.src="https://www.chatbase.co/embed.min.js";
+                script.id="mK6aDDDXvGaxIy1FtiiJe";
+                script.domain="www.chatbase.co";
+                document.body.appendChild(script)
+            };
+            if(document.readyState==="complete"){
+                onLoad()
+            }else{
+                window.addEventListener("load",onLoad)
+            }
+        })();
+    </script>
+
+    <!-- Optimize JavaScript Loading -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
+
+    <!-- Add Structured Data for Blog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Alpha Academy Blog",

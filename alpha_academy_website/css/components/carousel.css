@@ -1,0 +1,127 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform var(--transition-normal);
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-control {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 var(--spacing-md);
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.carousel-control:hover {
+  background-color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: var(--spacing-md);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing-xs);
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.carousel-indicator.active {
+  background-color: var(--white);
+  transform: scale(1.2);
+}
+
+/* 3D Carousel */
+.carousel-3d {
+  perspective: 1000px;
+}
+
+.carousel-3d .carousel-inner {
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.carousel-3d .carousel-item {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.carousel-3d .carousel-item.active {
+  opacity: 1;
+  transform: translateX(0) translateZ(0) rotateY(0);
+}
+
+.carousel-3d .carousel-item.prev {
+  opacity: 0;
+  transform: translateX(-100%) translateZ(-200px) rotateY(-45deg);
+}
+
+.carousel-3d .carousel-item.next {
+  opacity: 0;
+  transform: translateX(100%) translateZ(-200px) rotateY(45deg);
+}
+
+/* Testimonial Carousel */
+.testimonial-carousel {
+  padding: 0 var(--spacing-xl);
+}
+
+.testimonial-carousel .carousel-control {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.testimonial-carousel .carousel-control:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 639px) {
+  .carousel-controls {
+    display: none;
+  }
+  
+  .carousel-indicators {
+    bottom: var(--spacing-sm);
+  }
+}

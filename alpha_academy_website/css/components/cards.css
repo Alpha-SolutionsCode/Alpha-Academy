@@ -1,0 +1,244 @@
+.card {
+  background-color: var(--white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: var(--spacing-md);
+}
+
+.card-title {
+  font-size: var(--h4-size);
+  margin-bottom: var(--spacing-sm);
+  color: var(--near-black);
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-text {
+  margin-bottom: var(--spacing-md);
+  color: var(--dark-gray);
+}
+
+.card-footer {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--light-gray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Course card specific styles */
+.course-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  perspective: 1000px;
+}
+
+.course-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.course-card:hover .course-card-inner {
+  transform: rotateY(180deg);
+}
+
+.course-card-front, .course-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.course-card-front {
+  background-color: var(--white);
+}
+
+.course-card-back {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: rotateY(180deg);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.course-card-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--accent-color);
+}
+
+/* Blog card specific styles */
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-card-img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-card-category {
+  position: absolute;
+  top: var(--spacing-sm);
+  left: var(--spacing-sm);
+  background-color: var(--accent-color);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.blog-card-date {
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+  margin-bottom: var(--spacing-sm);
+}
+
+.blog-card-author {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--light-gray);
+}
+
+.blog-card-author-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: var(--spacing-sm);
+}
+
+/* Team card specific styles */
+.team-card {
+  text-align: center;
+}
+
+.team-card-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--spacing-md);
+  border: 4px solid var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.team-card-position {
+  color: var(--secondary-color);
+  font-style: italic;
+  margin-bottom: var(--spacing-sm);
+}
+
+.team-card-social {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.team-card-social a {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+/* Testimonial card specific styles */
+.testimonial-card {
+  position: relative;
+  padding: var(--spacing-lg);
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 5rem;
+  color: var(--light-gray);
+  font-family: serif;
+  line-height: 1;
+  z-index: 0;
+}
+
+.testimonial-content {
+  position: relative;
+  z-index: 1;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  margin-top: var(--spacing-md);
+}
+
+.testimonial-author-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: var(--spacing-sm);
+}
+
+.testimonial-author-name {
+  font-weight: 600;
+}
+
+.testimonial-author-title {
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+}
+
+/* 3D card effect */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card-3d:hover {
+  transform: rotateX(5deg) rotateY(5deg) translateZ(10px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 639px) {
+  .card-img {
+    height: 180px;
+  }
+  
+  .team-card-img {
+    width: 120px;
+    height: 120px;
+  }
+}

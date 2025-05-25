@@ -1,0 +1,162 @@
+/* Typography specific styles */
+body {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  line-height: 1.6;
+  color: var(--dark-gray);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-family: var(--accent-font);
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-lg);
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Responsive typography */
+@media (max-width: 639px) {
+  h1 {
+    font-size: calc(var(--h1-size) * 0.7);
+  }
+  
+  h2 {
+    font-size: calc(var(--h2-size) * 0.8);
+  }
+  
+  h3 {
+    font-size: calc(var(--h3-size) * 0.9);
+  }
+  
+  .lead {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses - Alpha Academy</title>
+    <meta name="description" content="Explore Alpha Academy's comprehensive range of courses, from academic excellence to professional development.">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.pinimg.com/736x/99/bb/1f/99bb1f0ecaf97dcbdb82a6ecab11e556.jpg" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2F8D46',
+                        secondary: '#1A1A1A',
+                        accent: '#00B4D8',
+                        'accent-light': '#90E0EF',
+                        'accent-cyan': '#48CAE4',
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 15px rgba(47, 141, 70, 0.5)',
+                        'glow-blue': '0 0 20px rgba(0, 180, 216, 0.5)',
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, #2F8D46 0%, #48CAE4 100%)',
+                        'gradient-secondary': 'linear-gradient(135deg, #1A1A1A 0%, #2F8D46 100%)',
+                        'gradient-futuristic': 'linear-gradient(135deg, #00B4D8 0%, #90E0EF 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(47, 141, 70, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #F5F5F5;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2F8D46;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #48CAE4;
+        }
+
+        .course-card {
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-icon {
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover .course-icon {
+            transform: scale(1.1);
+        }
+
+        .academic-card {
+            transition: all 0.3s ease;
+        }
+
+        .academic-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .academic-card .course-icon {
+            transition: all 0.3s ease;
+        }
+
+        .academic-card:hover .course-icon {
+            transform: scale(1.1);
+        }
+
+        .academic-card .duration-info {
+            background-color: rgba(47, 141, 70, 0.05);
+        }
+
+        .academic-card .info-item {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .academic-card .learn-more-btn {
+            margin-top: auto;
+        }
+
+        /* WhatsApp Button Styles */
+        .whatsapp-button {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: 500;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            animation: none;
+        }
+
+        .whatsapp-button i {
+            font-size: 24px;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-button span {
+            display: none;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @media (min-width: 640px) {
+            .whatsapp-button span {
+                display: inline;
+            }
+        }
+
+        .whatsapp-button::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #F4C542 0%, #D4AF37 100%);
+            border-radius: 50px;
+            z-index: -1;
+            opacity: 0.7;
+            animation: borderGlow 2s infinite;
+        }
+
+        /* WhatsApp Button Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes borderGlow {
+            0% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.9;
+                transform: scale(1.02);
+            }
+            100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+        }
+
+        /* Add a ripple effect on click */
+        .whatsapp-button::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10, 10);
+            opacity: 0;
+            transition: transform .5s, opacity 1s;
+        }
+
+        .whatsapp-button:active::after {
+            transform: scale(0, 0);
+            opacity: .3;
+            transition: 0s;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/923196446120" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="whatsapp-button"
+       aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 shadow-lg z-30">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="https://i.pinimg.com/736x/99/bb/1f/99bb1f0ecaf97dcbdb82a6ecab11e556.jpg" alt="Alpha Academy Logo" class="h-10 w-10 rounded-xl">
+                    <span class="text-xl font-bold text-primary">Alpha Academy</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About Us</a>
+                    <a href="courses.html" class="text-primary font-medium">Courses</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                    <a href="team.html" class="text-gray-600 hover:text-primary transition-colors">Team</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                </nav>
+                <a href="student-portal.html" class="hidden md:block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">
+                    Student Portal
+                </a>
+                <button class="md:hidden text-gray-600 hover:text-primary" aria-label="Toggle menu" id="mobileMenuToggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden" id="mobileMenu">
+        <div class="bg-white h-full w-64 p-6 shadow-lg">
+            <div class="flex justify-between items-center mb-8">
+                <span class="text-xl font-bold text-primary">Menu</span>
+                <button class="text-gray-600 hover:text-primary" aria-label="Close menu" id="mobileMenuClose">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About Us</a>
+                <a href="courses.html" class="text-primary font-medium">Courses</a>
+                <a href="blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                <a href="team.html" class="text-gray-600 hover:text-primary transition-colors">Team</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                <a href="student-portal.html" class="bg-gradient-primary text-white px-6 py-2 rounded-full text-center hover:shadow-glow transition-all">
+                    Student Portal
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-primary opacity-90"></div>
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3')] bg-cover bg-center mix-blend-overlay"></div>
+            <div class="container mx-auto px-4 relative">
+                <div class="text-center">
+                    <h1 class="text-6xl font-bold mb-6 text-white">Our Courses</h1>
+                    <p class="text-2xl text-white/90 mb-12">Discover our comprehensive range of educational programs</p>
+                </div>
+        </div>
+    </section>
+
+        <!-- Exam Preparation Programs -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="text-primary font-medium">Academic Excellence</span>
+                    <h2 class="text-4xl font-bold mt-2 mb-4">Exam Preparation Programs</h2>
+                    <p class="text-gray-600">Comprehensive preparation for various academic levels</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Matric Board Preparation -->
+                    <div class="academic-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="card-content flex flex-col h-full">
+                            <div class="course-icon w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-book text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-primary">Matric Board Preparation</h3>
+                            <p class="text-gray-600 mb-6 flex-grow">Expert guidance and practice for Matric board examinations with past paper solutions.</p>
+                            <div class="duration-info bg-gray-50 rounded-xl p-4 mb-6">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-clock text-primary"></i>
+                                        <span class="text-sm text-gray-600">12 Weeks</span>
+                                    </div>
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-user-graduate text-primary"></i>
+                                        <span class="text-sm text-gray-600">Matric Students</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="https://zcal.co/prof-imran-qamar/60min" class="learn-more-btn inline-block bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-glow transition-all text-center">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Matric Class Scheduling Widget -->
+                     
+
+                    <!-- Intermediate Preparation -->
+                    <div class="academic-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="card-content flex flex-col h-full">
+                            <div class="course-icon w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-graduation-cap text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-primary">Intermediate Preparation</h3>
+                            <p class="text-gray-600 mb-6 flex-grow">Comprehensive preparation for Intermediate (FSc/ICS) examinations with specialized subject coaching.</p>
+                            <div class="duration-info bg-gray-50 rounded-xl p-4 mb-6">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-clock text-primary"></i>
+                                        <span class="text-sm text-gray-600">16 Weeks</span>
+                                    </div>
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-user-graduate text-primary"></i>
+                                        <span class="text-sm text-gray-600">Intermediate Students</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="https://zcal.co/prof-imran-qamar/30min" class="learn-more-btn inline-block bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-glow transition-all text-center">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Intermediate Class Scheduling Widget -->
+                     
+
+                    <!-- O/A Level Preparation -->
+                    <div class="academic-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="card-content flex flex-col h-full">
+                            <div class="course-icon w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-award text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-primary">O/A Level Preparation</h3>
+                            <p class="text-gray-600 mb-6 flex-grow">Specialized Cambridge curriculum preparation for O Level and A Level examinations with international standards.</p>
+                            <div class="duration-info bg-gray-50 rounded-xl p-4 mb-6">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-clock text-primary"></i>
+                                        <span class="text-sm text-gray-600">16 Weeks</span>
+                                    </div>
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-user-graduate text-primary"></i>
+                                        <span class="text-sm text-gray-600">O/A Level Students</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="https://zcal.co/i/ewvCUF_h" class="learn-more-btn inline-block bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-glow transition-all text-center">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- O/A Level Class Scheduling Widget -->
+                     
+
+                    <!-- BS Program Preparation -->
+                    <div class="academic-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="card-content flex flex-col h-full">
+                            <div class="course-icon w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-university text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-primary">BS Program Preparation</h3>
+                            <p class="text-gray-600 mb-6 flex-grow">Specialized preparation for university entrance tests and BS program requirements.</p>
+                            <div class="duration-info bg-gray-50 rounded-xl p-4 mb-6">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-clock text-primary"></i>
+                                        <span class="text-sm text-gray-600">12 Weeks</span>
+                                    </div>
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-user-graduate text-primary"></i>
+                                        <span class="text-sm text-gray-600">University Aspirants</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/923196446120" class="learn-more-btn inline-block bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-glow transition-all text-center">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Development Courses -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="text-primary font-medium">Career Growth</span>
+                    <h2 class="text-4xl font-bold mt-2 mb-4">Professional Development</h2>
+                    <p class="text-gray-600">Enhance your skills with our industry-focused courses</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Web Development -->
+                    <div class="course-card bg-white rounded-2xl p-8 shadow-lg hover-glow transition-all">
+                        <div class="course-icon w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-code text-2xl text-white"></i>
+                                </div>
+                        <h3 class="text-xl font-bold mb-4 text-primary">Web Development</h3>
+                        <p class="text-gray-600 mb-6">Comprehensive training in HTML, CSS, JavaScript, and modern frameworks for full-stack development.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-clock w-6 text-primary"></i>
+                                <span>16 Weeks</span>
+                                </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-signal w-6 text-primary"></i>
+                                <span>All Levels</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/923196446120" class="mt-6 inline-block bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-glow transition-all">
+                            Learn More
+                        </a>
+                    </div>
+
+                    <!-- AI & Machine Learning -->
+                    <div class="course-card bg-white rounded-2xl p-8 shadow-lg hover-glow transition-all">
+                        <div class="course-icon w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-brain text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-primary">AI & Machine Learning</h3>
+                        <p class="text-gray-600 mb-6">Master AI and ML concepts with practical projects and real-world applications.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-clock w-6 text-primary"></i>
+                                <span>20 Weeks</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-signal w-6 text-primary"></i>
+                                <span>Intermediate</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/923196446120" class="mt-6 inline-block bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-glow transition-all">
+                            Learn More
+                        </a>
+                </div>
+
+                    <!-- Database Management -->
+                    <div class="course-card bg-white rounded-2xl p-8 shadow-lg hover-glow transition-all">
+                        <div class="course-icon w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-database text-2xl text-white"></i>
+                                </div>
+                        <h3 class="text-xl font-bold mb-4 text-primary">Database Management</h3>
+                        <p class="text-gray-600 mb-6">Learn modern database systems, SQL, and NoSQL databases for efficient data management.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-clock w-6 text-primary"></i>
+                                <span>12 Weeks</span>
+                                </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-signal w-6 text-primary"></i>
+                                <span>Intermediate</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/923196446120" class="mt-6 inline-block bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-glow transition-all">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coming Soon Courses -->
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="text-primary font-medium">Future Programs</span>
+                    <h2 class="text-4xl font-bold mt-2 mb-4">Coming Soon</h2>
+                    <p class="text-gray-600">Exciting new courses launching soon</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Truck Dispatching -->
+                    <div class="academic-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="card-content flex flex-col h-full">
+                            <div class="course-icon w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-truck text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-primary">Truck Dispatching</h3>
+                            <p class="text-gray-600 mb-6 flex-grow">Professional training in logistics management, route optimization, and fleet coordination.</p>
+                            <div class="duration-info bg-gray-50 rounded-xl p-4 mb-6">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-clock text-primary"></i>
+                                        <span class="text-sm text-gray-600">8 Weeks</span>
+                                    </div>
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-signal text-primary"></i>
+                                        <span class="text-sm text-gray-600">All Levels</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/923196446120" class="learn-more-btn inline-block bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-glow transition-all text-center">
+                                Coming Soon
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Virtual Reality -->
+                    <div class="academic-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="card-content flex flex-col h-full">
+                            <div class="course-icon w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-vr-cardboard text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-primary">Virtual Reality Development</h3>
+                            <p class="text-gray-600 mb-6 flex-grow">Create immersive VR experiences using Unity and modern VR development tools.</p>
+                            <div class="duration-info bg-gray-50 rounded-xl p-4 mb-6">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-clock text-primary"></i>
+                                        <span class="text-sm text-gray-600">16 Weeks</span>
+                                    </div>
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-signal text-primary"></i>
+                                        <span class="text-sm text-gray-600">Advanced</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/923196446120" class="learn-more-btn inline-block bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-glow transition-all text-center">
+                                Coming Soon
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Python Development -->
+                    <div class="academic-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="card-content flex flex-col h-full">
+                            <div class="course-icon w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                                <i class="fab fa-python text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-primary">Python Development</h3>
+                            <p class="text-gray-600 mb-6 flex-grow">Master Python programming with focus on data science, automation, and web development.</p>
+                            <div class="duration-info bg-gray-50 rounded-xl p-4 mb-6">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-clock text-primary"></i>
+                                        <span class="text-sm text-gray-600">12 Weeks</span>
+                                    </div>
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-signal text-primary"></i>
+                                        <span class="text-sm text-gray-600">Beginner</span>
+                </div>
+                                </div>
+                            </div>
+                            <a href="#" class="learn-more-btn inline-block bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-glow transition-all text-center">
+                                Coming Soon
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- App Development -->
+                    <div class="academic-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="card-content flex flex-col h-full">
+                            <div class="course-icon w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-mobile-alt text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-primary">App Development</h3>
+                            <p class="text-gray-600 mb-6 flex-grow">Learn to build cross-platform mobile applications using React Native and Flutter.</p>
+                            <div class="duration-info bg-gray-50 rounded-xl p-4 mb-6">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-clock text-primary"></i>
+                                        <span class="text-sm text-gray-600">14 Weeks</span>
+                                    </div>
+                                    <div class="info-item flex items-center space-x-2">
+                                        <i class="fas fa-signal text-primary"></i>
+                                        <span class="text-sm text-gray-600">Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="learn-more-btn inline-block bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-glow transition-all text-center">
+                                Coming Soon
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-primary opacity-90"></div>
+            <div class="container mx-auto px-4 relative">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold mb-6 text-white">Ready to Start Your Journey?</h2>
+                    <p class="text-xl text-white/90 mb-8">Join Alpha Academy and take the first step towards your future</p>
+                    <a href="https://wa.me/923196446120" class="inline-block bg-white text-primary px-8 py-4 rounded-full hover:shadow-glow transition-all">
+                        Enroll Now
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Logo and About -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="https://i.pinimg.com/736x/99/bb/1f/99bb1f0ecaf97dcbdb82a6ecab11e556.jpg" alt="Alpha Academy Logo" class="h-10 w-10 rounded-xl">
+                        <span class="text-xl font-bold text-primary">Alpha Academy</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">Pioneering the future of education with cutting-edge technology and innovative learning methods.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1ALKFtiqGf/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-primary"></i>
+                        </a>
+                        <a href="https://zcal.co/prof-imran-qamar" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="Schedule Meeting">
+                            <i class="fas fa-university text-primary"></i>
+                        </a>
+                        <a href="https://www.instagram.com/alpha_academy19?igsh=MWNwYW5oN245cjNlbA==" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="Instagram">
+                            <i class="fab fa-instagram text-primary"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/imran-sandhu-472822322" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in text-primary"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-primary">Quick Links</h3>
+                    <div class="space-y-4">
+                        <a href="index.html" class="block text-gray-600 hover:text-primary transition-colors">Home</a>
+                        <a href="about.html" class="block text-gray-600 hover:text-primary transition-colors">About Us</a>
+                        <a href="courses.html" class="block text-gray-600 hover:text-primary transition-colors">Courses</a>
+                        <a href="blog.html" class="block text-gray-600 hover:text-primary transition-colors">Blog</a>
+                        <a href="team.html" class="block text-gray-600 hover:text-primary transition-colors">Team</a>
+                        <a href="contact.html" class="block text-gray-600 hover:text-primary transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-primary">Contact Us</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary"></i>
+                            <div>
+                                <p class="text-gray-600">Alpha Academy, Main Campus</p>
+                                <p class="text-gray-600">Gujranwala, Pakistan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-phone-alt mt-1 text-primary"></i>
+                            <div>
+                                <p class="text-gray-600">+92 123 456 7890</p>
+                                <p class="text-gray-600">+92 098 765 4321</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-envelope mt-1 text-primary"></i>
+                            <div>
+                                <p class="text-gray-600">alphaacademy793@outlook.com</p>
+                                <p class="text-gray-600">alphaacademy793@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-primary">Newsletter</h3>
+                    <p class="text-gray-600 mb-4">Subscribe to our newsletter for updates on new courses and events.</p>
+                    <form class="flex">
+                        <input type="email" class="flex-1 px-4 py-3 rounded-l-xl bg-white border border-gray-200 focus:outline-none focus:border-primary" placeholder="Your Email Address">
+                        <button type="submit" class="px-6 py-3 bg-gradient-primary text-white rounded-r-xl hover:shadow-glow transition-all" aria-label="Subscribe to newsletter">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="flex flex-col space-y-2">
+                    <p class="text-gray-600">&copy; 2025 Alpha Academy. All Rights Reserved.</p>
+                    <p class="text-gray-600">Made by 🧠 for <a href="https://wa.me/92494206922" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Muhammad Mikran Sandhu</a></p>
+                </div>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+        mobileMenuClose.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                toggleMobileMenu();
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Chatbase Script -->
+    <script>
+        (function(){
+            if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+                window.chatbase=(...arguments)=>{
+                    if(!window.chatbase.q){
+                        window.chatbase.q=[]
+                    }
+                    window.chatbase.q.push(arguments)
+                };
+                window.chatbase=new Proxy(window.chatbase,{
+                    get(target,prop){
+                        if(prop==="q"){
+                            return target.q
+                        }
+                        return(...args)=>target(prop,...args)
+                    }
+                })
+            }
+            const onLoad=function(){
+                const script=document.createElement("script");
+                script.src="https://www.chatbase.co/embed.min.js";
+                script.id="mK6aDDDXvGaxIy1FtiiJe";
+                script.domain="www.chatbase.co";
+                document.body.appendChild(script)
+            };
+            if(document.readyState==="complete"){
+                onLoad()
+            }else{
+                window.addEventListener("load",onLoad)
+            }
+        })();
+    </script>
+</body>
+</html>

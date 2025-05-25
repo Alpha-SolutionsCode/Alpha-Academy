@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Alpha Academy | Best Online Learning Platform in Pakistan</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Meet the dedicated team behind Alpha Academy. Our experienced educators and staff are committed to providing quality education in Pakistan.">
+    <meta name="keywords" content="Alpha Academy team, educators Pakistan, teaching staff, online education team, educational leadership, Pakistan education, digital learning experts">
+    <meta name="author" content="Alpha Academy">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Our Team - Alpha Academy | Best Online Learning Platform in Pakistan">
+    <meta property="og:description" content="Meet the dedicated team behind Alpha Academy. Our experienced educators and staff are committed to providing quality education in Pakistan.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alphaacademy.com.pk/team">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" as="script">
+    
+    <!-- Defer Non-Critical CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alphaacademy.com.pk/team">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2F8D46',
+                        secondary: '#1A1A1A',
+                        accent: '#00B4D8',
+                        'accent-light': '#90E0EF',
+                        'accent-cyan': '#48CAE4',
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 15px rgba(47, 141, 70, 0.5)',
+                        'glow-blue': '0 0 20px rgba(0, 180, 216, 0.5)',
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, #2F8D46 0%, #48CAE4 100%)',
+                        'gradient-secondary': 'linear-gradient(135deg, #1A1A1A 0%, #2F8D46 100%)',
+                        'gradient-futuristic': 'linear-gradient(135deg, #00B4D8 0%, #90E0EF 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+        }
+
+        /* WhatsApp Button Styles */
+        .whatsapp-button {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: 500;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            animation: none;
+        }
+
+        .whatsapp-button i {
+            font-size: 24px;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-button span {
+            display: none;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @media (min-width: 640px) {
+            .whatsapp-button span {
+                display: inline;
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .team-card {
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-image {
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover .team-image {
+            transform: scale(1.05);
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+
+        .coming-soon-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(47, 141, 70, 0.1), rgba(0, 180, 216, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .coming-soon-card:hover::before {
+            opacity: 1;
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/923196446120" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="whatsapp-button"
+       aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 shadow-lg z-30">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="https://i.pinimg.com/736x/99/bb/1f/99bb1f0ecaf97dcbdb82a6ecab11e556.jpg" alt="Alpha Academy Logo" class="h-10 w-10 rounded-xl" loading="lazy" width="40" height="40">
+                    <span class="text-xl font-bold text-primary">Alpha Academy</span>
+                </a>
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About Us</a>
+                    <a href="courses.html" class="text-gray-600 hover:text-primary transition-colors">Courses</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                    <a href="team.html" class="text-primary font-medium">Team</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                </nav>
+                <a href="student-portal.html" class="hidden lg:block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">
+                    Student Portal
+                </a>
+                <button class="lg:hidden text-gray-600 hover:text-primary" aria-label="Toggle mobile menu" id="mobileMenuToggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="min-h-screen pt-32">
+        <!-- Hero Section -->
+        <section class="py-20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-primary opacity-10"></div>
+            <div class="container mx-auto px-4 relative">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-primary">Meet Our Team</h1>
+                    <p class="text-xl text-gray-600 mb-8">Dedicated educators committed to shaping the future of education in Pakistan</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Team Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 text-primary">Core Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                    <!-- Team Member 1 -->
+                    <div class="team-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://i.pinimg.com/736x/c8/bc/48/c8bc482805dbf8d4987db235ca26a716.jpg" alt="Imran Qamar" class="team-image w-full h-96 object-cover">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-primary">Imran Qamar</h3>
+                        <p class="text-gray-600 mb-4">Founder & Lead Educator</p>
+                        <p class="text-gray-600 mb-6">Passionate about transforming education through innovative teaching methods and technology integration.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/share/1ALKFtiqGf/" target="_blank" rel="noopener noreferrer" class="social-icon w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/alpha_academy19?igsh=MWNwYW5oN245cjNlbA==" target="_blank" rel="noopener noreferrer" class="social-icon w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/imran-sandhu-472822322" target="_blank" rel="noopener noreferrer" class="social-icon w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="team-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-glow transition-all">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <img src="https://i.pinimg.com/736x/fe/96/f1/fe96f1ea15ea17532db1d153c100ab81.jpg" alt="Muhammad Mikran Sandhu" class="team-image w-full h-96 object-cover">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-primary">Muhammad Mikran Sandhu</h3>
+                        <p class="text-gray-600 mb-4">Co-Founder & Technical Director</p>
+                        <p class="text-gray-600 mb-6">Expert in educational technology and digital learning solutions, driving innovation in online education.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://wa.me/92494206922" target="_blank" rel="noopener noreferrer" class="social-icon w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.instagram.com/mmikransandhu" target="_blank" rel="noopener noreferrer" class="social-icon w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/m-mikran-sandhu" target="_blank" rel="noopener noreferrer" class="social-icon w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seasonal Teachers Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 text-primary">Seasonal Teachers</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Coming Soon Card 1 -->
+                    <div class="coming-soon-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <div class="w-full h-64 bg-gray-100 flex items-center justify-center">
+                                <i class="fas fa-user-plus text-4xl text-gray-400"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Coming Soon</h3>
+                        <p class="text-gray-600 mb-4">Mathematics Expert</p>
+                        <p class="text-gray-500 italic">Join our team of seasonal educators</p>
+                    </div>
+
+                    <!-- Coming Soon Card 2 -->
+                    <div class="coming-soon-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <div class="w-full h-64 bg-gray-100 flex items-center justify-center">
+                                <i class="fas fa-user-plus text-4xl text-gray-400"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Coming Soon</h3>
+                        <p class="text-gray-600 mb-4">Science Specialist</p>
+                        <p class="text-gray-500 italic">Join our team of seasonal educators</p>
+                    </div>
+
+                    <!-- Coming Soon Card 3 -->
+                    <div class="coming-soon-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="relative overflow-hidden rounded-xl mb-6">
+                            <div class="w-full h-64 bg-gray-100 flex items-center justify-center">
+                                <i class="fas fa-user-plus text-4xl text-gray-400"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Coming Soon</h3>
+                        <p class="text-gray-600 mb-4">English Language Expert</p>
+                        <p class="text-gray-500 italic">Join our team of seasonal educators</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Our Team Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-6 text-primary">Join Our Team</h2>
+                    <p class="text-xl text-gray-600 mb-8">Are you passionate about education? We're always looking for talented educators to join our team.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="contact.html" class="inline-block bg-gradient-to-r from-[#D4AF37] to-[#F4C542] text-white px-8 py-4 rounded-full hover:shadow-lg transition-all">
+                            Drop Your CV 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Logo and About -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="https://i.pinimg.com/736x/99/bb/1f/99bb1f0ecaf97dcbdb82a6ecab11e556.jpg" alt="Alpha Academy Logo" class="h-10 w-10 rounded-xl" loading="lazy" width="40" height="40">
+                        <span class="text-xl font-bold text-primary">Alpha Academy</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">Pioneering the future of education with cutting-edge technology and innovative learning methods.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1ALKFtiqGf/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-primary"></i>
+                        </a>
+                        <a href="https://zcal.co/prof-imran-qamar" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="Schedule Meeting">
+                            <i class="fas fa-university text-primary"></i>
+                        </a>
+                        <a href="https://www.instagram.com/alpha_academy19?igsh=MWNwYW5oN245cjNlbA==" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="Instagram">
+                            <i class="fab fa-instagram text-primary"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/imran-sandhu-472822322" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in text-primary"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-primary">Quick Links</h3>
+                    <div class="space-y-4">
+                        <a href="index.html" class="block text-gray-600 hover:text-primary transition-colors">Home</a>
+                        <a href="about.html" class="block text-gray-600 hover:text-primary transition-colors">About Us</a>
+                        <a href="courses.html" class="block text-gray-600 hover:text-primary transition-colors">Courses</a>
+                        <a href="blog.html" class="block text-gray-600 hover:text-primary transition-colors">Blog</a>
+                        <a href="team.html" class="block text-gray-600 hover:text-primary transition-colors">Team</a>
+                        <a href="contact.html" class="block text-gray-600 hover:text-primary transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-primary">Contact Us</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary"></i>
+                            <div>
+                                <p class="text-gray-600">Alpha Academy, Main Campus</p>
+                                <p class="text-gray-600">Gujranwala, Pakistan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-phone-alt mt-1 text-primary"></i>
+                            <div>
+                                <p class="text-gray-600">+92 321 644 3914</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-envelope mt-1 text-primary"></i>
+                            <div>
+                                <p class="text-gray-600">alphaacademy793@outlook.com</p>
+                                <p class="text-gray-600">alphaacademy793@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-primary">Newsletter</h3>
+                    <p class="text-gray-600 mb-4">Subscribe to our newsletter for updates on new courses and events.</p>
+                    <form class="flex">
+                        <input type="email" class="flex-1 px-4 py-3 rounded-l-xl bg-white border border-gray-200 focus:outline-none focus:border-primary" placeholder="Your Email Address">
+                        <button type="submit" class="px-6 py-3 bg-gradient-primary text-white rounded-r-xl hover:shadow-glow transition-all" aria-label="Subscribe to newsletter">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="flex flex-col space-y-2">
+                    <p class="text-gray-600">&copy; 2025 Alpha Academy. All Rights Reserved.</p>
+                    <p class="text-gray-600">Made by 🧠 for <a href="https://wa.me/92494206922" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Muhammad Mikran Sandhu</a></p>
+                </div>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script defer>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            function toggleMobileMenu() {
+                mobileMenu.classList.toggle('hidden');
+                document.body.classList.toggle('overflow-hidden');
+            }
+
+            mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+            mobileMenuClose.addEventListener('click', toggleMobileMenu);
+
+            // Close mobile menu when clicking outside
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    toggleMobileMenu();
+                }
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMobileMenu);
+            });
+        });
+    </script>
+
+    <!-- Chatbase Script -->
+    <script>
+        (function(){
+            if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+                window.chatbase=(...arguments)=>{
+                    if(!window.chatbase.q){
+                        window.chatbase.q=[]
+                    }
+                    window.chatbase.q.push(arguments)
+                };
+                window.chatbase=new Proxy(window.chatbase,{
+                    get(target,prop){
+                        if(prop==="q"){
+                            return target.q
+                        }
+                        return(...args)=>target(prop,...args)
+                    }
+                })
+            }
+            const onLoad=function(){
+                const script=document.createElement("script");
+                script.src="https://www.chatbase.co/embed.min.js";
+                script.id="mK6aDDDXvGaxIy1FtiiJe";
+                script.domain="www.chatbase.co";
+                document.body.appendChild(script)
+            };
+            if(document.readyState==="complete"){
+                onLoad()
+            }else{
+                window.addEventListener("load",onLoad)
+            }
+        })();
+    </script>
+</body>
+</html>

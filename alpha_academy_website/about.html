@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Alpha Academy</title>
+    <meta name="description" content="Learn about Alpha Academy's mission, vision, and commitment to excellence in education.">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.pinimg.com/736x/99/bb/1f/99bb1f0ecaf97dcbdb82a6ecab11e556.jpg" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2F8D46',
+                        secondary: '#1A1A1A',
+                        accent: '#00B4D8',
+                        'accent-light': '#90E0EF',
+                        'accent-cyan': '#48CAE4',
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 15px rgba(47, 141, 70, 0.5)',
+                        'glow-blue': '0 0 20px rgba(0, 180, 216, 0.5)',
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, #2F8D46 0%, #48CAE4 100%)',
+                        'gradient-secondary': 'linear-gradient(135deg, #1A1A1A 0%, #2F8D46 100%)',
+                        'gradient-futuristic': 'linear-gradient(135deg, #00B4D8 0%, #90E0EF 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(47, 141, 70, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #F5F5F5;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2F8D46;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #48CAE4;
+        }
+
+        /* WhatsApp Button Styles */
+        .whatsapp-button {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: 500;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            animation: none;
+        }
+
+        .whatsapp-button i {
+            font-size: 24px;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-button span {
+            display: none;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @media (min-width: 640px) {
+            .whatsapp-button span {
+                display: inline;
+            }
+        }
+
+        .whatsapp-button::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #F4C542 0%, #D4AF37 100%);
+            border-radius: 50px;
+            z-index: -1;
+            opacity: 0.7;
+            animation: borderGlow 2s infinite;
+        }
+
+        /* WhatsApp Button Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes borderGlow {
+            0% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.9;
+                transform: scale(1.02);
+            }
+            100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+        }
+
+        /* Add a ripple effect on click */
+        .whatsapp-button::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10, 10);
+            opacity: 0;
+            transition: transform .5s, opacity 1s;
+        }
+
+        .whatsapp-button:active::after {
+            transform: scale(0, 0);
+            opacity: .3;
+            transition: 0s;
+        }
+
+        /* Timeline Responsive Styles */
+        @media (max-width: 768px) {
+            .timeline-item {
+                margin-bottom: 2rem;
+            }
+            
+            .timeline-content {
+                width: 100%;
+                margin: 0;
+                text-align: center;
+            }
+            
+            .timeline-dot {
+                display: none;
+            }
+            
+            .timeline-line {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .timeline-content {
+                padding: 1rem;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.25rem;
+            }
+            
+            .timeline-content p {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/923196446120" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="whatsapp-button"
+       aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 shadow-lg z-30">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="https://i.pinimg.com/736x/99/bb/1f/99bb1f0ecaf97dcbdb82a6ecab11e556.jpg" alt="Alpha Academy Logo" class="h-10 w-10 rounded-xl">
+                    <span class="text-xl font-bold text-primary">Alpha Academy</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="about.html" class="text-primary font-medium">About Us</a>
+                    <a href="courses.html" class="text-gray-600 hover:text-primary transition-colors">Courses</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                    <a href="team.html" class="text-gray-600 hover:text-primary transition-colors">Team</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                </nav>
+                <a href="student-portal.html" class="hidden md:block bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-glow transition-all">
+                    Student Portal
+                </a>
+                <button class="md:hidden text-gray-600 hover:text-primary" aria-label="Toggle menu" id="mobileMenuToggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden" id="mobileMenu">
+        <div class="bg-white h-full w-64 p-6 shadow-lg">
+            <div class="flex justify-between items-center mb-8">
+                <span class="text-xl font-bold text-primary">Menu</span>
+                <button class="text-gray-600 hover:text-primary" aria-label="Close menu" id="mobileMenuClose">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                <a href="about.html" class="text-primary font-medium">About Us</a>
+                <a href="courses.html" class="text-gray-600 hover:text-primary transition-colors">Courses</a>
+                <a href="blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                <a href="team.html" class="text-gray-600 hover:text-primary transition-colors">Team</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                <a href="student-portal.html" class="bg-gradient-primary text-white px-6 py-2 rounded-full text-center hover:shadow-glow transition-all">
+                    Student Portal
+                </a>
+            </nav>
+        </div>
+                </div>
+
+    <!-- Main Content -->
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-primary opacity-90"></div>
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3')] bg-cover bg-center mix-blend-overlay"></div>
+            <div class="container mx-auto px-4 relative">
+                <div class="text-center">
+                    <h1 class="text-6xl font-bold mb-6 text-white">About Alpha Academy</h1>
+                    <p class="text-2xl text-white/90 mb-12">Pioneering Excellence in Education Since 1996</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+        <section class="py-20">
+        <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover-glow transition-all">
+                        <div class="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-bullseye text-2xl text-white"></i>
+            </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary">Our Mission</h3>
+                        <p class="text-gray-600">To provide quality education that empowers students to achieve their full potential and become leaders in their chosen fields.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover-glow transition-all">
+                        <div class="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-eye text-2xl text-white"></i>
+                </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary">Our Vision</h3>
+                        <p class="text-gray-600">To be the leading educational institution that shapes the future of education through innovation, excellence, and student success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- History Section -->
+        <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="text-primary font-medium">Our Journey</span>
+                    <h2 class="text-4xl font-bold mt-2 mb-4">A Legacy of Excellence</h2>
+                    <p class="text-gray-600">From humble beginnings to becoming a center of educational excellence</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <p class="text-gray-600 mb-6">Founded in 1996 by Prof. Imran Qamar Sandhu, Alpha Academy has grown from a small coaching center to a comprehensive educational institution. Our commitment to excellence and innovation has helped thousands of students achieve their academic and professional goals.</p>
+                        <p class="text-gray-600">Today, we continue to expand our programs and facilities while maintaining the highest standards of education and student support.</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+        <section class="py-20">
+        <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                <span class="text-primary font-medium">Our Journey</span>
+                    <h2 class="text-4xl font-bold mt-2 mb-4">Alpha Academy Timeline</h2>
+                <p class="text-gray-600">Key milestones in our journey of educational excellence</p>
+            </div>
+
+                <div class="relative max-w-4xl mx-auto">
+                <!-- Timeline Line -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-primary md:block hidden"></div>
+
+                <!-- Timeline Items -->
+                <div class="space-y-12">
+                    <!-- Timeline Item 1 -->
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="w-full md:w-1/2 md:pr-12 text-center md:text-right mb-4 md:mb-0">
+                                <div class="bg-white rounded-2xl p-6 shadow-lg hover-glow transition-all">
+                                    <span class="text-primary font-medium">1996</span>
+                                    <h3 class="text-xl font-bold mt-2 mb-2">Foundation</h3>
+                                    <p class="text-gray-600">Alpha Academy was established by Prof. Imran Qamar Sandhu as a small tutoring center in Gujranwala.</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-primary md:block hidden"></div>
+                            <div class="w-full md:w-1/2 md:pl-12"></div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="w-full md:w-1/2 md:pr-12"></div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-primary md:block hidden"></div>
+                            <div class="w-full md:w-1/2 md:pl-12 text-center md:text-left">
+                                <div class="bg-white rounded-2xl p-6 shadow-lg hover-glow transition-all">
+                                    <span class="text-primary font-medium">2000</span>
+                                    <h3 class="text-xl font-bold mt-2 mb-2">Expansion</h3>
+                                    <p class="text-gray-600">Expanded to a larger facility to accommodate growing student enrollment and introduced new academic programs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="w-full md:w-1/2 md:pr-12 text-center md:text-right mb-4 md:mb-0">
+                                <div class="bg-white rounded-2xl p-6 shadow-lg hover-glow transition-all">
+                                    <span class="text-primary font-medium">2005</span>
+                                    <h3 class="text-xl font-bold mt-2 mb-2">Technology Integration</h3>
+                                    <p class="text-gray-600">Introduced computer labs and began offering technology courses, including basic computer skills and web development.</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-primary md:block hidden"></div>
+                            <div class="w-full md:w-1/2 md:pl-12"></div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="w-full md:w-1/2 md:pr-12"></div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-primary md:block hidden"></div>
+                            <div class="w-full md:w-1/2 md:pl-12 text-center md:text-left">
+                                <div class="bg-white rounded-2xl p-6 shadow-lg hover-glow transition-all">
+                                    <span class="text-primary font-medium">2010</span>
+                                    <h3 class="text-xl font-bold mt-2 mb-2">Home Tuition Services</h3>
+                                    <p class="text-gray-600">Launched personalized home tuition services to provide one-on-one instruction for students requiring individual attention.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 5 -->
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="w-full md:w-1/2 md:pr-12 text-center md:text-right mb-4 md:mb-0">
+                                <div class="bg-white rounded-2xl p-6 shadow-lg hover-glow transition-all">
+                                    <span class="text-primary font-medium">2015</span>
+                                    <h3 class="text-xl font-bold mt-2 mb-2">Digital Transformation</h3>
+                                    <p class="text-gray-600">Implemented online learning platforms and digital resources to enhance the learning experience.</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-primary md:block hidden"></div>
+                            <div class="w-full md:w-1/2 md:pl-12"></div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 6 -->
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="w-full md:w-1/2 md:pr-12"></div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-primary md:block hidden"></div>
+                            <div class="w-full md:w-1/2 md:pl-12 text-center md:text-left">
+                                <div class="bg-white rounded-2xl p-6 shadow-lg hover-glow transition-all">
+                                    <span class="text-primary font-medium">2020</span>
+                                    <h3 class="text-xl font-bold mt-2 mb-2">Global Recognition</h3>
+                                    <p class="text-gray-600">Received international recognition for excellence in education and innovative teaching methodologies.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Values Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="text-primary font-medium">Our Values</span>
+                    <h2 class="text-4xl font-bold mt-2 mb-4">What We Stand For</h2>
+                    <p class="text-gray-600">The principles that guide our educational approach</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover-glow transition-all">
+                        <div class="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-star text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-primary">Excellence</h3>
+                        <p class="text-gray-600">We strive for excellence in everything we do, from teaching to student support.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover-glow transition-all">
+                        <div class="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-lightbulb text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-primary">Innovation</h3>
+                        <p class="text-gray-600">We embrace new technologies and teaching methods to enhance learning.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover-glow transition-all">
+                        <div class="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-users text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-primary">Community</h3>
+                        <p class="text-gray-600">We foster a supportive community where students can thrive and grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-primary opacity-90"></div>
+            <div class="container mx-auto px-4 relative">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold mb-6 text-white">Join Our Community</h2>
+                    <p class="text-xl text-white/90 mb-8">Be part of our journey towards educational excellence</p>
+                    <a href="https://whatsapp.com/channel/0029VafrMBDAu3aKZsvOk73T" class="inline-block bg-white text-primary px-8 py-4 rounded-full hover:shadow-glow transition-all">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Logo and About -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="https://i.pinimg.com/736x/99/bb/1f/99bb1f0ecaf97dcbdb82a6ecab11e556.jpg" alt="Alpha Academy Logo" class="h-10 w-10 rounded-xl">
+                        <span class="text-xl font-bold text-primary">Alpha Academy</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">Pioneering the future of education with cutting-edge technology and innovative learning methods.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1ALKFtiqGf/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-primary"></i>
+                        </a>
+                        <a href="https://zcal.co/prof-imran-qamar" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="Schedule Meeting">
+                            <i class="fas fa-university text-primary"></i>
+                        </a>
+                        <a href="https://www.instagram.com/alpha_academy19?igsh=MWNwYW5oN245cjNlbA==" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="Instagram">
+                            <i class="fab fa-instagram text-primary"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/imran-sandhu-472822322" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow transition-all hover:scale-110" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in text-primary"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-primary">Quick Links</h3>
+                    <div class="space-y-4">
+                        <a href="index.html" class="block text-gray-600 hover:text-primary transition-colors">Home</a>
+                        <a href="about.html" class="block text-gray-600 hover:text-primary transition-colors">About Us</a>
+                        <a href="courses.html" class="block text-gray-600 hover:text-primary transition-colors">Courses</a>
+                        <a href="blog.html" class="block text-gray-600 hover:text-primary transition-colors">Blog</a>
+                        <a href="team.html" class="block text-gray-600 hover:text-primary transition-colors">Team</a>
+                        <a href="contact.html" class="block text-gray-600 hover:text-primary transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-primary">Contact Us</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary"></i>
+                            <div>
+                                <p class="text-gray-600">Alpha Academy, Main Campus</p>
+                                <p class="text-gray-600">Gujranwala, Pakistan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-phone-alt mt-1 text-primary"></i>
+                            <div>
+                                <p class="text-gray-600">+92 321 644 3914</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-envelope mt-1 text-primary"></i>
+                            <div>
+                                <p class="text-gray-600">alphaacademy793@outlook.com</p>
+                                <p class="text-gray-600">alphaacademy793@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-primary">Newsletter</h3>
+                    <p class="text-gray-600 mb-4">Subscribe to our newsletter for updates on new courses and events.</p>
+                    <form class="flex">
+                        <input type="email" class="flex-1 px-4 py-3 rounded-l-xl bg-white border border-gray-200 focus:outline-none focus:border-primary" placeholder="Your Email Address">
+                        <button type="submit" class="px-6 py-3 bg-gradient-primary text-white rounded-r-xl hover:shadow-glow transition-all" aria-label="Subscribe to newsletter">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="flex flex-col space-y-2">
+                    <p class="text-gray-600">&copy; 2025 Alpha Academy. All Rights Reserved.</p>
+                    <p class="text-gray-600">Made by 🧠 for <a href="https://wa.me/92494206922" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Muhammad Mikran Sandhu</a></p>
+                </div>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+        mobileMenuClose.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                toggleMobileMenu();
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Chatbase Script -->
+    <script>
+        (function(){
+            if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+                window.chatbase=(...arguments)=>{
+                    if(!window.chatbase.q){
+                        window.chatbase.q=[]
+                    }
+                    window.chatbase.q.push(arguments)
+                };
+                window.chatbase=new Proxy(window.chatbase,{
+                    get(target,prop){
+                        if(prop==="q"){
+                            return target.q
+                        }
+                        return(...args)=>target(prop,...args)
+                    }
+                })
+            }
+            const onLoad=function(){
+                const script=document.createElement("script");
+                script.src="https://www.chatbase.co/embed.min.js";
+                script.id="mK6aDDDXvGaxIy1FtiiJe";
+                script.domain="www.chatbase.co";
+                document.body.appendChild(script)
+            };
+            if(document.readyState==="complete"){
+                onLoad()
+            }else{
+                window.addEventListener("load",onLoad)
+            }
+        })();
+    </script>
+</body>
+</html>
